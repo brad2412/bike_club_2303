@@ -20,6 +20,14 @@ class Biker
   end
 
   def personal_record(ride)
-    @rides[ride]&.min
+    if @rides[ride].nil? 
+      return false
+    else
+      return @rides[ride].min 
+    end
+  end
+
+  def get_ride_count(ride) 
+    @rides[ride].nil? ? 0 : @rides[ride].size
   end
 end
